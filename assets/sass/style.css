@@ -2748,7 +2748,8 @@ Menu Bar Sticky
 }
 
 .header__sticky.header__sticky-sticky-menu .header__area {
-  background: var(--heading-color);
+  background: linear-gradient(to right, #ffffff 0%,#433772 50% ,#06050b 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /*==========================================================================
@@ -2760,7 +2761,8 @@ Menu Bar
   top: 0;
   width: 100%;
   z-index: 99999;
-  border-bottom: 1px solid var(--border-color-1);
+  /* border-bottom: 1px solid var(--border-color-1); */
+  /* border-bottom: 1px solid #342b5e; */
   padding: 0 50px;
 }
 
