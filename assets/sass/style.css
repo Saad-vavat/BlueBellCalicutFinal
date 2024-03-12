@@ -2748,7 +2748,7 @@ Menu Bar Sticky
 }
 
 .header__sticky.header__sticky-sticky-menu .header__area {
-  background: linear-gradient(to right, #ffffff 0% ,#1c1732 100%);
+  background: linear-gradient(to right, #ffffff 0% ,#000000 100%);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
