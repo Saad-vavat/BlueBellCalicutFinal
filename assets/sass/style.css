@@ -8022,3 +8022,16 @@ Contact
           filter: grayscale(1);
 }
 /*# sourceMappingURL=style.css.map */
+
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px !important; /* Adjust as needed */
+  right: 20px !important; /* Adjust as needed */
+  z-index: 9999; /* Ensure the button stays on top of other content */
+}
+
+
+.whatsapp-btn img {
+  width: 30%; /* Adjust width as needed */
+}
