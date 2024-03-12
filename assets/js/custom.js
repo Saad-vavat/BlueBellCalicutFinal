@@ -222,27 +222,14 @@ $(window).on('load', function() {
 })(jQuery);
 
 
-// Function to animate the WhatsApp button
-function animateWhatsAppButton() {
-    const whatsappButton = document.querySelector('.whatsapp-btn');
-    let count = 0;
-    const colors = ['#fff', '#00FF00', '#0000FF', '#FF0000']; // Array of border colors
-    
-    // Interval function to change border color gradually
-    const interval = setInterval(() => {
-        whatsappButton.style.borderColor = colors[count];
-        count++;
-        if (count === colors.length) {
-            count = 0; // Reset count if it reaches the end of colors array
-        }
-    }, 500); // Change border color every 500 milliseconds
-
-    // Clear interval after a certain time
-    setTimeout(() => {
-        clearInterval(interval);
-        whatsappButton.style.borderColor = '#fff'; // Reset border color to initial color
-    }, 5000); // Stop animation after 5 seconds
+// Function to toggle the visibility of WhatsApp button
+function toggleWhatsAppButton() {
+    const whatsappButton = document.getElementById('whatsappBtn');
+    whatsappButton.classList.toggle('show'); // Toggle the 'show' class to show/hide the button
 }
 
-// Call the animateWhatsAppButton function when the page loads
-window.addEventListener('load', animateWhatsAppButton);
+// Call the toggleWhatsAppButton function when the page loads
+window.addEventListener('load', () => {
+    toggleWhatsAppButton(); // Initially show the button
+    setInterval(toggleWhatsAppButton, 3000); // Toggle the button every 3 seconds
+});

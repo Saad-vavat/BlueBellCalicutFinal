@@ -8029,8 +8029,12 @@ Contact
   bottom: 20px !important; /* Adjust as needed */
   right: 20px !important; /* Adjust as needed */
   z-index: 9999; /* Ensure the button stays on top of other content */
+  transition: opacity 0.3s ease;
 }
-
+.whatsapp-btn.show {
+  display: block; /* Show the button when 'show' class is added */
+  opacity: 1; /* Make button fully visible */
+}
 
 .whatsapp-btn img {
   width: 30%; /* Adjust width as needed */
