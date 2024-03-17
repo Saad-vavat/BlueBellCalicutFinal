@@ -8039,3 +8039,65 @@ Contact
 .whatsapp-btn img {
   width: 30%; /* Adjust width as needed */
 }
+
+
+/*====================================================
+ home page sliding backround 
+ =================================================== */
+.banner__area {
+    position: relative;
+    overflow: hidden; /* Ensure the gradient overlay covers the entire area */
+}
+
+.banner__area::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--black)), to(rgba(14, 19, 23, 0)));
+    background: linear-gradient(180deg, var(--black) 0%, rgba(14, 19, 23, 0) 100%);
+    z-index: -1; /* Place the overlay behind other content */
+}
+
+.sliding-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2; /* Ensure the sliding background is behind the overlay */
+}
+
+
+
+.sliding-background img.active {
+    opacity: 1;
+    z-index: -1; /* Ensure the active image is above the overlay */
+}
+
+.sliding-background img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center the images horizontally */
+  width: 100%; /* Set width to 100% of its container */
+  height: 100%; /* Allow height to adjust accordingly */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+@media (max-width: 576px) {
+  .sliding-background img {
+      height: 100vh; /* Allow height to adjust accordingly */
+      width: 768px; /* Set width to its original size on smaller screens */
+      max-width: none;
+  }
+}
+
+@keyframes slide {
+    0% {left: 0;}
+    100% {left: -100%;}
+}
