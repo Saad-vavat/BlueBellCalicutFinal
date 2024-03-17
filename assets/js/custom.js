@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Change image every 5 seconds
-    setInterval(nextImage, 5000);
+    setInterval(nextImage, 3000);
 });
 
 
