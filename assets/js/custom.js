@@ -256,3 +256,36 @@ document.addEventListener("DOMContentLoaded", function() {
     // Change image every 5 seconds
     setInterval(nextImage, 5000);
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const featureSlidings = document.querySelectorAll('.feature-sliding');
+
+    featureSlidings.forEach(featureSliding => {
+        const images = featureSliding.querySelectorAll('img');
+        let currentImageIndex = 0;
+
+        function showImage(index) {
+            images.forEach((image, i) => {
+                if (i === index) {
+                    image.classList.add('active');
+                } else {
+                    image.classList.remove('active');
+                }
+            });
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        function startSlideshow() {
+            setInterval(nextImage, 5000); // Change image every 5 seconds
+        }
+
+        // Load the first image and start the slideshow
+        showImage(currentImageIndex);
+        startSlideshow();
+    });
+});
