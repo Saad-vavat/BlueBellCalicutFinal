@@ -8023,6 +8023,9 @@ Contact
 }
 /*# sourceMappingURL=style.css.map */
 
+/*====================================================
+ whatsapp images 
+ =================================================== */
 
 .whatsapp-btn {
   position: fixed;
@@ -8040,6 +8043,11 @@ Contact
   width: 30%; /* Adjust width as needed */
 }
 
+@media (max-width: 576px) {
+  .whatsapp-btn img {
+    width: 40%; /* Adjust the width for smaller screens */
+  }
+}
 
 /*====================================================
  home page sliding backround 
