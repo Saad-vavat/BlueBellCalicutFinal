@@ -8104,31 +8104,3 @@ Contact
 
 
 
-/* .feature-sliding img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.feature-sliding img.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-
-@media (max-width: 576px) {
- 
-    .feature-sliding img {
-        width: 100%; /* Set width to 100% of container */
-        height: 100%; /* Allow height to adjust proportionally */
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-        z-index: 1;
-    }
-    
-} */
-
