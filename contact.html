@@ -102,9 +102,9 @@
 						</div>
 					</div>
 					<div class="header__area-menubar-right-box">
-						<!-- <div class="header__area-menubar-right-box-btn">
-							<a class="theme-btn" href="contact.html">Book Now<i class="fal fa-long-arrow-right"></i></a>
-						</div> -->
+						<div class="header__area-menubar-right-box-btn">
+							<a class="theme-btn" href="#" data-bs-toggle="modal" data-bs-target="#bookingModal">Book Now<i class="fal fa-long-arrow-right"></i></a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -368,7 +368,22 @@
 		</div>
 	</div>
 	<!-- Footer Area End -->
-	
+	<!-- Booking Modal -->
+	<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="bookingModalLabel">Book Your Stay</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body p-0">
+					<iframe
+						style="width: 100%; height: 500px; border: 0;"
+						src="https://onlinereservation.innfinitcrs.co.in/Forms/PropertySearchNew.aspx?theme=bluebell&layout=horizontal"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
 		<!--Whatsapp Btn Start-->
 	<!-- WhatsApp Button -->
 	<a href="https://wa.me/9539111081" target="_blank" class="whatsapp-btn text-end pb-5" id="whatsappBtn">
@@ -385,12 +400,12 @@
 	<!-- Scroll Btn End -->
 	<!-- Main JS -->
 	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<!-- Popper JS -->
+	<script src="assets/js/popper.min.js"></script>
 	<!-- Bootstrap JS -->
 	<script src="assets/js/bootstrap.min.js"></script>
 	<!-- Counter Up JS -->
 	<script src="assets/js/jquery.counterup.min.js"></script>
-	<!-- Popper JS -->
-	<script src="assets/js/popper.min.js"></script>
 	<!-- Magnific Popup JS -->
 	<script src="assets/js/jquery.magnific-popup.min.js"></script>
 	<!-- Nice Select JS -->
