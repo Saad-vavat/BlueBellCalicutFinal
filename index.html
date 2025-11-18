@@ -499,37 +499,21 @@
 	</div>
 	<!-- Footer Area End -->
 	<!-- Booking Modal -->
-	<!-- In your existing HTML, replace the bookingModal div -->
-<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="bookingModalLabel">Book Your Stay</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-0">
-                <div class="iframe-container">
-                    <div class="iframe-loader" id="iframeLoader">
-                        <div class="spinner-border text-primary" role="status"></div>
-                        <p class="mt-3">Loading booking system...</p>
-                    </div>
-                    
-                    <div class="iframe-error" id="iframeError">
-                        <h4>Unable to Load Booking System</h4>
-                        <p>Please click below to open the booking page in a new window.</p>
-                        <a href="https://onlinereservation.innfinitcrs.co.in/index.aspx" 
-                           target="_blank" 
-                           class="external-link-btn">
-                            Open Booking Page
-                        </a>
-                    </div>
-                    
-                    <iframe id="bookingIframe" style="width: 100%; height: 800px; border: 0; display: none;" src="about:blank"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+	<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="bookingModalLabel">Book Your Stay</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body p-0">
+					<iframe
+						style="width: 100%; height: 800px; border: 0;"
+						src="https://onlinereservation.innfinitcrs.co.in/index.aspx"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Terms and Conditions Modal -->
 	<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered modal-lg">
@@ -690,38 +674,6 @@
 			proceedToBookingBtn.addEventListener('click', function () {
 				termsModal.hide();
 				bookingModal.show();
-			});
-
-			const bookingModalElement = document.getElementById('bookingModal');
-			const bookingIframe = document.getElementById('bookingIframe');
-			const iframeLoader = document.getElementById('iframeLoader');
-			const iframeError = document.getElementById('iframeError');
-			const bookingUrl = 'https://onlinereservation.innfinitcrs.co.in/index.aspx';
-
-			bookingModalElement.addEventListener('show.bs.modal', function () {
-				// Reset state
-				iframeLoader.style.display = 'block';
-				bookingIframe.style.display = 'none';
-				iframeError.style.display = 'none';
-				bookingIframe.src = 'about:blank'; // Clear previous content
-
-				// Set the src to start loading
-				bookingIframe.src = bookingUrl;
-			});
-
-			bookingIframe.onload = function() {
-				iframeLoader.style.display = 'none';
-				bookingIframe.style.display = 'block';
-				iframeError.style.display = 'none';
-			};
-
-			bookingIframe.onerror = function() {
-				iframeLoader.style.display = 'none';
-				iframeError.style.display = 'block';
-			};
-
-			bookingModalElement.addEventListener('hidden.bs.modal', function () {
-				bookingIframe.src = 'about:blank'; // Stop loading when modal is closed
 			});
 		});
 	</script>
