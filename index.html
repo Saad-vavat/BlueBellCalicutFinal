@@ -691,6 +691,38 @@
 				termsModal.hide();
 				bookingModal.show();
 			});
+
+			const bookingModalElement = document.getElementById('bookingModal');
+			const bookingIframe = document.getElementById('bookingIframe');
+			const iframeLoader = document.getElementById('iframeLoader');
+			const iframeError = document.getElementById('iframeError');
+			const bookingUrl = 'https://onlinereservation.innfinitcrs.co.in/index.aspx';
+
+			bookingModalElement.addEventListener('show.bs.modal', function () {
+				// Reset state
+				iframeLoader.style.display = 'block';
+				bookingIframe.style.display = 'none';
+				iframeError.style.display = 'none';
+				bookingIframe.src = 'about:blank'; // Clear previous content
+
+				// Set the src to start loading
+				bookingIframe.src = bookingUrl;
+			});
+
+			bookingIframe.onload = function() {
+				iframeLoader.style.display = 'none';
+				bookingIframe.style.display = 'block';
+				iframeError.style.display = 'none';
+			};
+
+			bookingIframe.onerror = function() {
+				iframeLoader.style.display = 'none';
+				iframeError.style.display = 'block';
+			};
+
+			bookingModalElement.addEventListener('hidden.bs.modal', function () {
+				bookingIframe.src = 'about:blank'; // Stop loading when modal is closed
+			});
 		});
 	</script>
 </body>
